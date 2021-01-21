@@ -2,5 +2,5 @@
 References
 ==========
 
-96B Quad Ethernet Mezzanine Board Files
+ROBO96V2 Mezzanine Board Files
 =======================================
