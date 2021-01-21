@@ -1,0 +1,31 @@
+.. ROBO96V2 documentation master file, created by
+   sphinx-quickstart on Thu Jan 21 13:19:09 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+ROBO96V2 Mezzanine
+====================================
+
+
+
+Description
+==================
+The ROBO96V2 Mezzanine is an add-on/expansion board for SoC based development platforms designed to the 96Boards specification. The mezzanine card is a multi sensor card that has 1x Ethernet, 1x internal GPS, 1x Pixahawk GPS Port, 8xServos, 1x barometer, 1xIMU, 1x Motion Sensor connectivity to the carrier development platform.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Datasheet
+
+   pin_configuration
+   specifications
+   detailed_description
+   mechanical_info
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User Guide
+
+   getting_started
+   board_setup
+   programming_guide
+   references

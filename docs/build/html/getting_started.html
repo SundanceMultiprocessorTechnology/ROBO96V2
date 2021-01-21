@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; ROBO96V2 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Board Setup" href="board_setup.html" />
+    <link rel="prev" title="Mechanical Information" href="mechanical_info.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ROBO96V2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Datasheet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pin_configuration.html">Pin Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailed_description.html">Detailed Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mechanical_info.html">Mechanical Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-designs">Example Designs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#axi-ethernet-based-example">AXI Ethernet based example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-ultra96-board-definition-files">Install Ultra96 board definition files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axi-ethernet-evaluation-license">AXI Ethernet evaluation license</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-instructions">Build instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-vivado-and-vitis-projects">Build the Vivado and Vitis projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows-users">Windows users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux-users">Linux users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-petalinux-projects">Build the PetaLinux projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Linux users</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-on-hardware">Launch on hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#echo-server-via-jtag">Echo server via JTAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#petalinux-via-jtag">PetaLinux via JTAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#petalinux-via-sd-card">PetaLinux via SD card</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#echo-server-example-usage">Echo Server Example Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-ip-address">Default IP address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ping-the-port">Ping the port</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="board_setup.html">Board Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming_guide.html">Programming Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ROBO96V2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-designs">
+<h2>Example Designs<a class="headerlink" href="#example-designs" title="Permalink to this headline">¶</a></h2>
+<p>The example designs for the ROBO96V2 Mezzanine are hosted on Github and
+are designed for the Avnet Ultra96 development platform. There are currently two
+examples and they are differentiated by the type of Ethernet MACs used and their
+location in the system.</p>
+<div class="section" id="axi-ethernet-based-example">
+<h3>AXI Ethernet based example<a class="headerlink" href="#axi-ethernet-based-example" title="Permalink to this headline">¶</a></h3>
+<p>This example design is based on Xilinx’s soft (ie. FPGA implemented) MAC,
+the AXI Ethernet Subsystem IP, that can be found in the Vivado IP Catalog.
+As the MAC is implemented in the FPGA fabric, this example is ideal for
+applications that require some packet processing to be performed in the FPGA.</p>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the example designs, you will need the following:</p>
+<ul class="simple">
+<li>Windows or Linux PC</li>
+<li>Xilinx Vivado</li>
+<li>Xilinx Vitis</li>
+<li>1x Ultra96 development platform</li>
+<li>1x 96B Quad Ethernet Mezzanine</li>
+</ul>
+<p>If you want to build PetaLinux for the example designs, you will also need:</p>
+<ul class="simple">
+<li>Linux PC or a virtual Linux machine</li>
+<li>PetaLinux Tools</li>
+</ul>
+<p>You will also need a CAT-5e Ethernet cable and a link partner, such as a PC with an Ethernet port
+or a network router.</p>
+<p>Additionally, you may need to install the Ultra96 board definition files to your Vivado
+installation, and obtain an AXI Ethernet evaluation license if you intend to use that design.</p>
+<div class="section" id="install-ultra96-board-definition-files">
+<h3>Install Ultra96 board definition files<a class="headerlink" href="#install-ultra96-board-definition-files" title="Permalink to this headline">¶</a></h3>
+<p>To use the example projects, you must first install the board definition files for the Ultra96 into your Vivado
+and Vitis installation. The Ultra96 board definition files are hosted on
+<a class="reference external" href="https://github.com/Avnet/bdf">Avnet’s Github repo</a>.</p>
+<p>Clone or download that repo, then copy the <code class="docutils literal notranslate"><span class="pre">ultra96v1</span></code> and <code class="docutils literal notranslate"><span class="pre">ultra96v2</span></code> directories from it to the
+following directories on your machine:
+* <code class="docutils literal notranslate"><span class="pre">&lt;path-to-xilinx-vivado&gt;/data/boards/board_files</span></code>
+* <code class="docutils literal notranslate"><span class="pre">&lt;path-to-xilinx-vitis&gt;/data/boards/board_files</span></code></p>
+</div>
+<div class="section" id="axi-ethernet-evaluation-license">
+<h3>AXI Ethernet evaluation license<a class="headerlink" href="#axi-ethernet-evaluation-license" title="Permalink to this headline">¶</a></h3>
+<p>If you intend to build the AXI Ethernet based design, you will need to get an evaluation (or full)
+license for the Tri-mode Ethernet MAC from Xilinx. You can find instructions for that here:
+<a class="reference external" href="http://ethernetfmc.com/getting-a-license-for-the-xilinx-tri-mode-ethernet-mac/">Xilinx Soft TEMAC license</a></p>
+</div>
+</div>
+<div class="section" id="build-instructions">
+<h2>Build instructions<a class="headerlink" href="#build-instructions" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+<div class="section" id="build-the-vivado-and-vitis-projects">
+<h3>Build the Vivado and Vitis projects<a class="headerlink" href="#build-the-vivado-and-vitis-projects" title="Permalink to this headline">¶</a></h3>
+<p>Once you have installed the board definition files, and you have installed the required licenses, then
+you can use the sources in this repository to build the Vivado, Vitis and PetaLinux projects. Start by cloning the repo
+or download it as a zip file and extract the files to your hard drive, then follow these steps depending on your OS:</p>
+<div class="section" id="windows-users">
+<h4>Windows users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open Windows Explorer, browse to the repo files on your hard drive.</li>
+<li>In the Vivado directory, you will find multiple batch files (*.bat).
+Double click on the batch file of the example project that you would
+like to generate - this will generate a Vivado project.</li>
+<li>You will be asked to select between Ultra96 v1 and v2. It is important to select the
+correct version of the Ultra96 that you are using. Type 1 or 2 (for v1 or v2)
+and press ENTER. The script will now generate the Vivado project for your board.</li>
+<li>Run Vivado and open the project that was just created.</li>
+<li>Click Generate bitstream.</li>
+<li>When the bitstream is successfully generated, select “File-&gt;Export-&gt;Export Hardware”.
+In the window that opens, tick “Include bitstream” and “Local to project”.</li>
+<li>Return to Windows Explorer and browse to the Vitis directory in the repo.</li>
+<li>Double click the <cite>build-vitis.bat</cite> batch file. The batch file will run the
+<cite>build-vitis.tcl</cite> script and build the Vitis workspace containing the hardware
+design and the software application. Please refer to the “README.md” file in the Vitis
+subdirectory for instructions on running the software application on hardware.</li>
+<li>If you are interested in building PetaLinux, you will need to use a Linux machine and
+follow the steps for Linux users below.</li>
+</ol>
+</div>
+<div class="section" id="linux-users">
+<h4>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Launch the Vivado GUI.</li>
+<li>On the welcome page, there is a Tcl console. In the Tcl console, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the repo files on your hard drive
+and into the Vivado subdirectory. For example: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/media/projects/ethernet96/Vivado</span></code>.</li>
+<li>Specify the version of Ultra96 you want to build the project for (v1 or v2) by
+using one of the following commands: <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">argv</span> <span class="pre">{1}</span></code> for v1, or <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">argv</span> <span class="pre">{2}</span></code> for v2.</li>
+<li>In the Vivado subdirectory, you will find multiple Tcl files. To list them, type <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">ls</span> <span class="pre">{*}[glob</span> <span class="pre">*.tcl]</span></code>.
+Determine the Tcl script for the example project that you would
+like to generate (for example: <code class="docutils literal notranslate"><span class="pre">build-ps-gem.tcl</span></code>), then <code class="docutils literal notranslate"><span class="pre">source</span></code> the script in the Tcl console:
+For example: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">build-ps-gem.tcl</span></code></li>
+<li>Vivado will run the script and generate the project. When it’s finished, click Generate bitstream.</li>
+<li>When the bitstream is successfully generated, select “File-&gt;Export-&gt;Export Hardware”.
+In the window that opens, tick “Include bitstream” and “Local to project”.</li>
+<li>To build the Vitis workspace, open a Linux command terminal and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the Vitis directory in the repo.</li>
+<li>The Vitis directory contains the <code class="docutils literal notranslate"><span class="pre">build-vitis.tcl</span></code> script that will build the Vitis workspace containing the hardware
+design and the software application. Run the build script by typing the following command:
+<code class="docutils literal notranslate"><span class="pre">&lt;path-of-xilinx-vitis&gt;/bin/xsct</span> <span class="pre">build-vitis.tcl</span></code>
+Note that you must replace <code class="docutils literal notranslate"><span class="pre">&lt;path-of-xilinx-vitis&gt;</span></code> with the actual path to your Vitis installation.</li>
+<li>Please refer to the “README.md” file in the Vitis subdirectory for instructions on running the software
+application on hardware.</li>
+<li>To build the PetaLinux project, follow the steps in the following section.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="build-the-petalinux-projects">
+<h3>Build the PetaLinux projects<a class="headerlink" href="#build-the-petalinux-projects" title="Permalink to this headline">¶</a></h3>
+<p>Once the Vivado project(s) have been built and exported, you can now build the PetaLinux project(s).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The PetaLinux projects can only be built on a Linux machine (or virtual Linux machine).</p>
+</div>
+<div class="section" id="id1">
+<h4>Linux users<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>To build the PetaLinux project, first launch PetaLinux by sourcing the “settings.sh” bash script,
+eg: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">&lt;path-to-installed-petalinux&gt;/settings.sh</span></code>.</li>
+<li>Now <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the PetaLinux directory in the repo and run the <code class="docutils literal notranslate"><span class="pre">build-petalinux</span></code>
+script. You may have to add execute permission to the script first using <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">build-petalinux</span></code>,
+then run it by typing <code class="docutils literal notranslate"><span class="pre">./build-petalinux</span></code>.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>UNIX line endings:</strong> The scripts and files in the PetaLinux directory of this repository must
+have UNIX line endings when they are executed or used under Linux. The best way to ensure UNIX
+line endings, is to clone the repo directly onto your Linux machine. If instead you have copied
+the repo from a Windows machine, the files will have DOS line endings and
+you must use the <code class="docutils literal notranslate"><span class="pre">dos2unix</span></code> tool to convert the line endings for UNIX.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="launch-on-hardware">
+<h2>Launch on hardware<a class="headerlink" href="#launch-on-hardware" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="echo-server-via-jtag">
+<h3>Echo server via JTAG<a class="headerlink" href="#echo-server-via-jtag" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Open Vitis.</li>
+<li>Power up your hardware platform and ensure that the JTAG is connected properly.</li>
+<li>Select “Xilinx Tools-&gt;Program FPGA”. In the “Program FPGA” dialog box that appears, select the
+“Hardware Platform” that you want to run, this will correspond to name of the Vivado project that
+you built earlier.</li>
+<li>Click on the software application that you want to run, it should be the one with the postfix “_echo_system”.</li>
+<li>Open the drop-down menu of the “Run” button (play) on the toolbar. Select “Run Configurations”, then in the
+dialog box that appears, double-click on the option
+“Single Application Debug”. This will create a new run configuration for the application.</li>
+<li>Select the new run configuration and click “Run”.</li>
+</ol>
+</div>
+<div class="section" id="petalinux-via-jtag">
+<h3>PetaLinux via JTAG<a class="headerlink" href="#petalinux-via-jtag" title="Permalink to this headline">¶</a></h3>
+<p>To launch the PetaLinux project on hardware via JTAG, connect and power up your hardware and then
+use the following commands in a Linux command terminal:</p>
+<ol class="arabic simple">
+<li>Change current directory to the PetaLinux project directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;petalinux-project-dir&gt;</span></code></li>
+<li>Download bitstream to the FPGA: <code class="docutils literal notranslate"><span class="pre">petalinux-boot</span> <span class="pre">--jtag</span> <span class="pre">--fpga</span></code>
+Note that you don’t have to specify the bitstream because this command will use the one that it finds
+in the <code class="docutils literal notranslate"><span class="pre">./images/linux</span></code> directory.</li>
+<li>Download the PetaLinux kernel to the FPGA: <code class="docutils literal notranslate"><span class="pre">petalinux-boot</span> <span class="pre">--jtag</span> <span class="pre">--kernel</span></code></li>
+</ol>
+</div>
+<div class="section" id="petalinux-via-sd-card">
+<h3>PetaLinux via SD card<a class="headerlink" href="#petalinux-via-sd-card" title="Permalink to this headline">¶</a></h3>
+<p>To boot PetaLinux on hardware via SD card:</p>
+<ol class="arabic">
+<li><p class="first">The SD card must first be prepared with two partitions: one for the boot files and another
+for the root file system.</p>
+<ul class="simple">
+<li>Plug the SD card into your computer and find it’s device name using the <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> command.
+The SD card should be found at the end of the log, and it’s device name should be something
+like <code class="docutils literal notranslate"><span class="pre">/dev/sdX</span></code>, where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a letter such as a,b,c,d, etc. Note that you should replace
+the <code class="docutils literal notranslate"><span class="pre">X</span></code> in the following instructions.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">fdisk</span></code> by typing the command <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">fdisk</span> <span class="pre">/dev/sdX</span></code></li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">boot</span></code> partition: typing <code class="docutils literal notranslate"><span class="pre">n</span></code> to create a new partition, then type <code class="docutils literal notranslate"><span class="pre">p</span></code> to make
+it primary, then use the default partition number and first sector. For the last sector, type
+<code class="docutils literal notranslate"><span class="pre">+1G</span></code> to allocate 1GB to this partition.</li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">boot</span></code> partition bootable by typing <code class="docutils literal notranslate"><span class="pre">a</span></code></li>
+<li>Make the <code class="docutils literal notranslate"><span class="pre">root</span></code> partition: typing <code class="docutils literal notranslate"><span class="pre">n</span></code> to create a new partition, then type <code class="docutils literal notranslate"><span class="pre">p</span></code> to make
+it primary, then use the default partition number, first sector and last sector.</li>
+<li>Save the partition table by typing <code class="docutils literal notranslate"><span class="pre">w</span></code></li>
+<li>Format the <code class="docutils literal notranslate"><span class="pre">boot</span></code> partition (FAT32) by typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.vfat</span> <span class="pre">-F</span> <span class="pre">32</span> <span class="pre">-n</span> <span class="pre">boot</span> <span class="pre">/dev/sdX1</span></code></li>
+<li>Format the <code class="docutils literal notranslate"><span class="pre">root</span></code> partition (ext4) by typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkfs.ext4</span> <span class="pre">-L</span> <span class="pre">root</span> <span class="pre">/dev/sdX2</span></code></li>
+</ul>
+</li>
+<li><p class="first">Copy the following files to the <cite>boot</cite> partition of the SD card:
+Assuming the <code class="docutils literal notranslate"><span class="pre">boot</span></code> partition was mounted to <code class="docutils literal notranslate"><span class="pre">/media/user/boot</span></code>, follow these instructions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /media/user/boot/
+<span class="gp">$</span> sudo cp /&lt;petalinux-project&gt;/images/linux/BOOT.BIN .
+<span class="gp">$</span> sudo cp /&lt;petalinux-project&gt;/images/linux/boot.scr .
+<span class="gp">$</span> sudo cp /&lt;petalinux-project&gt;/images/linux/image.ub .
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the root file system by extracting the <code class="docutils literal notranslate"><span class="pre">rootfs.tar.gz</span></code> file to the <code class="docutils literal notranslate"><span class="pre">root</span></code> partition.
+Assuming the <code class="docutils literal notranslate"><span class="pre">root</span></code> partition was mounted to <code class="docutils literal notranslate"><span class="pre">/media/user/root</span></code>, follow these instructions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /media/user/root/
+<span class="gp">$</span> sudo cp /&lt;petalinux-project&gt;/images/linux/rootfs.tar.gz .
+<span class="gp">$</span> sudo tar xvf rootfs.tar.gz -C .
+<span class="gp">$</span> sync
+</pre></div>
+</div>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">sync</span></code> command returns, you will be able to eject the SD card from the machine.</p>
+</li>
+<li><p class="first">Connect and power your hardware.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="echo-server-example-usage">
+<h2>Echo Server Example Usage<a class="headerlink" href="#echo-server-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="default-ip-address">
+<h3>Default IP address<a class="headerlink" href="#default-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>The echo server is designed to attempt to obtain an IP address from a DHCP server. This is useful
+if the echo server is connected to a network. Once the IP address is obtained, it is printed out
+in the UART console output.</p>
+<p>If instead the echo server is connected directly to a PC, the DHCP attempt will fail and the echo
+server will default to the IP address 192.168.1.10. To be able to communicate with the echo server
+from the PC, the PC should be configured with a fixed IP address on the same subnet, for example:
+192.168.1.20.</p>
+</div>
+<div class="section" id="ping-the-port">
+<h3>Ping the port<a class="headerlink" href="#ping-the-port" title="Permalink to this headline">¶</a></h3>
+<p>The echo server can be “pinged” from a connected PC, or if connected to a network, from
+another device on the network. The UART console output will tell you what the IP address of the
+echo server is. To ping the echo server, use the <code class="docutils literal notranslate"><span class="pre">ping</span></code> command from a command console.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">192.168.1.10</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="board_setup.html" class="btn btn-neutral float-right" title="Board Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mechanical_info.html" class="btn btn-neutral float-left" title="Mechanical Information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Jack Bonnell, Tim Fernandez-Hart
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
